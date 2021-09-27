@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 
 public class CustomNumberFactory {
-	private ArrayList<CustomNumber> customNumberList = new ArrayList<CustomNumber>();
+	private ArrayList<CustomNumber> customNumberList;
 	private String fileContent;
 	
 	public CustomNumberFactory(String fileContent) {
@@ -15,6 +15,7 @@ public class CustomNumberFactory {
 	}
 	
 	private void fillCustomNumberList() {
+		customNumberList = new ArrayList<CustomNumber>();
 		
 		String regex = "\\d+\\.\\d+";
 
@@ -44,5 +45,6 @@ public class CustomNumberFactory {
 
 	public void setFileContent(String fileContent) {
 		this.fileContent = fileContent;
+		fillCustomNumberList();
 	}
 }

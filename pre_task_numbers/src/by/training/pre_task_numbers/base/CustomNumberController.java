@@ -19,9 +19,6 @@ public class CustomNumberController {
 	}
 
 
-
-
-
 	public double sumCustomNumber() {
 		
 		double result = 0.0d;

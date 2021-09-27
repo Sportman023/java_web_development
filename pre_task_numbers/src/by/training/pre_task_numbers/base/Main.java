@@ -15,7 +15,7 @@ import java.io.File;
 public class Main {
 
 	public static void main(String[] args) {
-		final String PATH = "Numbers .txt";
+		final String PATH = "Numbers.txt";
 		
 		File file = new File(PATH);
 		FileController fileController = new FileController(file);
