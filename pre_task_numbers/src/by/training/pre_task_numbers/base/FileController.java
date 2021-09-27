@@ -5,9 +5,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class FileController {
 	private File file;
 	private String fileContent;
+	static Logger logger = LogManager.getLogger();
 	
 	public FileController (File file) {
 		this.file = file;
@@ -24,17 +28,15 @@ public class FileController {
 				fileContent += currentLine + "\n";
 				currentLine = reader.readLine();
 			}
-			
-			
+			reader.close();
+				
 		} catch (IOException e) {
-			//преписать!!!
-			System.out.println("error");
+			logger.error("IOException", e);
+			fileContent = "";
 		}
 		
 	}
-	
-	
-	
+
 	public File getFile() {
 		return file;
 	}
@@ -48,6 +50,6 @@ public class FileController {
 	}
 
 	public void setFileContent(String fileContent) {
-		fileContent = fileContent;
+		this.fileContent = fileContent;
 	}
 }

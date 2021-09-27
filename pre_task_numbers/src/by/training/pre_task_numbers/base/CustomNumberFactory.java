@@ -14,7 +14,7 @@ public class CustomNumberFactory {
 		fillCustomNumberList();
 	}
 	
-	public void fillCustomNumberList() {
+	private void fillCustomNumberList() {
 		
 		String regex = "\\d+\\.\\d+";
 

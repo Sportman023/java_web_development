@@ -1,12 +1,21 @@
 package by.training.pre_task_numbers.base;
 
 import java.io.File;
-import java.util.ArrayList;
+
+
+/*
+ * Задание: Создать класс Число.
+ * Прочитать числа из текстового файла.
+ * Выполнить валидацию и преобразование.
+ * Создать фабрику по созданию объектов класса Число.
+ * Разработать service-классы реализующие функциональности:
+ * +, -, *, /.
+ */
 
 public class Main {
 
 	public static void main(String[] args) {
-		final String PATH = "Numbers.txt";
+		final String PATH = "Numbers .txt";
 		
 		File file = new File(PATH);
 		FileController fileController = new FileController(file);
@@ -14,11 +23,12 @@ public class Main {
 		
 		CustomNumberController customNumberController = new CustomNumberController(customNumberFactory.getCustomNumberList());
 		CustomNumberView customNumberView = new CustomNumberView(customNumberController);
+		
 		customNumberView.sumCustomNumber();
 		customNumberView.differenceCustomNumber();
 		customNumberView.multiplyCustomNumber();
-		customNumberView.divideCustomNumber();
-		
+		customNumberView.divideCustomNumber();	
+	
 	}
 
 }
