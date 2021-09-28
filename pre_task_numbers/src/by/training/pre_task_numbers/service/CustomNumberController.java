@@ -1,34 +1,24 @@
-package by.training.pre_task_numbers.base;
+package by.training.pre_task_numbers.service;
 
 import java.util.ArrayList;
 
+import by.training.pre_task_numbers.entity.CustomNumber;
+
 public class CustomNumberController {
-	private ArrayList<CustomNumber> customNumberList;
 	
-	public CustomNumberController(ArrayList<CustomNumber> customNumberList) {
-		this.customNumberList = customNumberList;
+	public CustomNumberController() {
 	}
 	
-	
-	public ArrayList<CustomNumber> getCustomNumberList() {
-		return customNumberList;
-	}
 
-	public void setCustomNumberList(ArrayList<CustomNumber> customNumberList) {
-		this.customNumberList = customNumberList;
-	}
-
-
-	public double sumCustomNumber() {
-		
+	public CustomNumber sumCustomNumber(ArrayList<CustomNumber> customNumberList) {		
 		double result = 0.0d;
 		for (CustomNumber customNumber : customNumberList) {
 			result += customNumber.getValue();
 		}
-		return result;
+		return new CustomNumber(result);
 	}
 	
-	public double differenceCustomNumber() {
+	public CustomNumber differenceCustomNumber(ArrayList<CustomNumber> customNumberList) {
 		
 		double result = 0.0d;
 		boolean firstItem = true;
@@ -40,12 +30,12 @@ public class CustomNumberController {
 				result -= customNumber.getValue();
 			}	
 		}
-		return result;
+		return new CustomNumber(result);
 	}
 	
-	public double multiplyCustomNumber() {
+	public CustomNumber multiplyCustomNumber(ArrayList<CustomNumber> customNumberList) {
 		if (customNumberList.size() == 0) {
-			return 0.0d;
+			return new CustomNumber(0.0d);
 		}
 		
 		double result = 1.0d;
@@ -53,13 +43,13 @@ public class CustomNumberController {
 			result *= customNumber.getValue();
 		}
 		
-		return result;
+		return new CustomNumber(result);
 	}
 	
-	public double divideCustomNumber() {
+	public CustomNumber divideCustomNumber(ArrayList<CustomNumber> customNumberList) {
 		CustomNumber firstCustomNumber = customNumberList.get(0);
 		if(firstCustomNumber.getValue() == 0.0d) {
-			return 0.0;
+			return new CustomNumber(0.0d);
 		}
 		
 		double result = 0.0d;
@@ -72,7 +62,7 @@ public class CustomNumberController {
 				result /= customNumber.getValue();
 			}	
 		}
-		return result;
+		return new CustomNumber(result);
 	}
 	
 }

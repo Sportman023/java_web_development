@@ -1,4 +1,4 @@
-package by.training.pre_task_numbers.base;
+package by.training.pre_task_numbers.entity;
 
 public class CustomNumber implements Comparable<CustomNumber>{
 	private double value;
@@ -14,8 +14,12 @@ public class CustomNumber implements Comparable<CustomNumber>{
 		this.value = value;
 	}
 	@Override
+	public int compareTo(CustomNumber customNumber) {
+		return Double.compare(value, customNumber.getValue());
+	}
+	@Override
 	public String toString() {
-		return "CustomNumber [value=" + value + ", toString()=" + super.toString() + "]";
+		return "CustomNumber [value=" + value + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -33,9 +37,4 @@ public class CustomNumber implements Comparable<CustomNumber>{
 		CustomNumber other = (CustomNumber) obj;
 		return value == other.getValue();
 	}
-	@Override
-	public int compareTo(CustomNumber customNumber) {
-		return Double.compare(value, customNumber.getValue());
-	}
-
 }
