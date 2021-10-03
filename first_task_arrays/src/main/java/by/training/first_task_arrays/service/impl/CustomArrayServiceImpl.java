@@ -2,8 +2,9 @@ package by.training.first_task_arrays.service.impl;
 
 import by.training.first_task_arrays.entity.CustomArray;
 import by.training.first_task_arrays.service.CustomArrayService;
+import by.training.first_task_arrays.service.CustomArraySortService;
 
-public class CustomArrayServiceImpl implements CustomArrayService {
+public class CustomArrayServiceImpl implements CustomArrayService, CustomArraySortService {
 
 	@Override
 	public int min(CustomArray customArray) {

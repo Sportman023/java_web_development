@@ -7,8 +7,6 @@ import by.training.first_task_arrays.parser.StringToIntParser;
 
 import static org.testng.Assert.*;
 
-import java.awt.Desktop.Action;
-
 public class StringToIntParserTest {
 	StringToIntParser stringToIntParser = new StringToIntParser();
 

@@ -10,7 +10,4 @@ public interface CustomArrayService {
 	public abstract int sum(CustomArray customArray);
 	public abstract int countPositiveItem(CustomArray customArray);
 	public abstract int countNegativeItem(CustomArray customArray);
-	public abstract void bubleSort (CustomArray customArray);
-	public abstract void insertSort (CustomArray customArray);
-	public abstract void mergeSort (CustomArray customArray);	
 }

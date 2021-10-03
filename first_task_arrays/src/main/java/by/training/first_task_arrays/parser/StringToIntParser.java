@@ -28,7 +28,6 @@ public class StringToIntParser {
 		while (matcher.find()) {
 			value = Integer.valueOf(matcher.group());
 			integerList.add(value);
-
 		}
 
 		int[] intArray = new int[integerList.size()];

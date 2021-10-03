@@ -38,7 +38,7 @@ public class CustomArrayServiceImplTest {
 	public void replaceItemTest() {
 		CustomArray customArrayExpected = new CustomArray(0, 1, 0, -2);
 		CustomArray customArrayActual = new CustomArray(array);
-		
+
 		customArrayServiceImpl.replaceItem(customArrayActual, 5, 0);
 		assertEquals(customArrayActual, customArrayExpected);
 	}
@@ -70,35 +70,34 @@ public class CustomArrayServiceImplTest {
 		int expected = 1;
 		assertEquals(actual, expected);
 	}
-	
+
 	@Test
 	public void bubbleSort() {
 		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
 		CustomArray customArrayActual = new CustomArray(array);
-		
+
 		customArrayServiceImpl.bubleSort(customArrayActual);
 
 		assertEquals(customArrayActual, customArrayExpected);
 	}
-	
+
 	@Test
 	public void insertSort() {
 		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
 		CustomArray customArrayActual = new CustomArray(array);
-		
+
 		customArrayServiceImpl.bubleSort(customArrayActual);
 
 		assertEquals(customArrayActual, customArrayExpected);
 	}
-	
+
 	@Test
 	public void mergeSort() {
 		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
 		CustomArray customArrayActual = new CustomArray(array);
-		
+
 		customArrayServiceImpl.mergeSort(customArrayActual);
 
 		assertEquals(customArrayActual, customArrayExpected);
 	}
 }
-
