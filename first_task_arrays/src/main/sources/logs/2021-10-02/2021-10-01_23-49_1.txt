@@ -1,0 +1,2 @@
+2021-10-01 23:49:29 [main] [filterFistValidLine] [20]
+			ERROR by.training.first_task_arrays.filter.ContentFilter - There are no lines

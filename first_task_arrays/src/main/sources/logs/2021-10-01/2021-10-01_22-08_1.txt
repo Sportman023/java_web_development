@@ -1,0 +1,2 @@
+2021-10-01 22:08:05 [main] [readFile] [29]
+			ERROR by.training.first_task_arrays.reader.CustomFileReader - java.nio.file.AccessDeniedException: 

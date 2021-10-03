@@ -1,0 +1,2 @@
+2021-10-01 22:06:01 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error

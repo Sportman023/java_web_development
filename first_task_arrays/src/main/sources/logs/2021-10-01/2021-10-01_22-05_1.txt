@@ -1,0 +1,10 @@
+2021-10-01 22:05:05 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error
+2021-10-01 22:05:13 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error
+2021-10-01 22:05:16 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error
+2021-10-01 22:05:56 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error
+2021-10-01 22:05:58 [main] [main] [10]
+			ERROR by.training.first_task_arrays.entity.Main - error

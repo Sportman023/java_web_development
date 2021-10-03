@@ -4,17 +4,22 @@ import java.util.Arrays;
 
 public class CustomArray {
 	private int[] array;
-	
-	public CustomArray(int...array) {
-		this.array = array;
+
+	public CustomArray(int... array) {
+		this.array = array.clone();
 	}
 
 	public int[] getArray() {
-		return array;
+		return array.clone();
 	}
 
 	public void setArray(int[] array) {
 		this.array = array;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomArray [array=" + Arrays.toString(array) + "]";
 	}
 
 	@Override

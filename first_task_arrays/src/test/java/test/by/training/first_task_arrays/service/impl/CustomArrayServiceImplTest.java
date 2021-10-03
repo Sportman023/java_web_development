@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import by.training.first_task_arrays.entity.CustomArray;
 import by.training.first_task_arrays.service.impl.CustomArrayServiceImpl;
 
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import static org.testng.Assert.*;
 
 public class CustomArrayServiceImplTest {
@@ -13,8 +13,8 @@ public class CustomArrayServiceImplTest {
 	CustomArray customArray;
 	CustomArrayServiceImpl customArrayServiceImpl;
 
-	@BeforeMethod
-	public void beforeMethod() {
+	@BeforeClass
+	public void beforeClass() {
 
 		customArray = new CustomArray(array);
 		customArrayServiceImpl = new CustomArrayServiceImpl();
@@ -37,9 +37,10 @@ public class CustomArrayServiceImplTest {
 	@Test
 	public void replaceItemTest() {
 		CustomArray customArrayExpected = new CustomArray(0, 1, 0, -2);
-		CustomArray customArrayActual = customArrayServiceImpl.replaceItem(new CustomArray(5, 1, 0, -2), 5, 0);
-
-		assertTrue(customArrayExpected.equals(customArrayActual));
+		CustomArray customArrayActual = new CustomArray(array);
+		
+		customArrayServiceImpl.replaceItem(customArrayActual, 5, 0);
+		assertEquals(customArrayActual, customArrayExpected);
 	}
 
 	@Test
@@ -69,4 +70,35 @@ public class CustomArrayServiceImplTest {
 		int expected = 1;
 		assertEquals(actual, expected);
 	}
+	
+	@Test
+	public void bubbleSort() {
+		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
+		CustomArray customArrayActual = new CustomArray(array);
+		
+		customArrayServiceImpl.bubleSort(customArrayActual);
+
+		assertEquals(customArrayActual, customArrayExpected);
+	}
+	
+	@Test
+	public void insertSort() {
+		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
+		CustomArray customArrayActual = new CustomArray(array);
+		
+		customArrayServiceImpl.bubleSort(customArrayActual);
+
+		assertEquals(customArrayActual, customArrayExpected);
+	}
+	
+	@Test
+	public void mergeSort() {
+		CustomArray customArrayExpected = new CustomArray(-2, 0, 1, 5);
+		CustomArray customArrayActual = new CustomArray(array);
+		
+		customArrayServiceImpl.mergeSort(customArrayActual);
+
+		assertEquals(customArrayActual, customArrayExpected);
+	}
 }
+
