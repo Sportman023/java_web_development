@@ -11,6 +11,7 @@ import by.training.first_task_arrays.exception.CustomException;
 
 public class ContentFilter {
 	static Logger logger = LogManager.getLogger();
+	private final String REGEX_INT_LINE = "^-?\\d+(\\s-?\\d+)*";
 
 	public ContentFilter() {
 	}
@@ -21,8 +22,7 @@ public class ContentFilter {
 			throw new CustomException("There are no lines");
 		}
 
-		final String REGEX = "^-?\\d+(\\s-?\\d+)*";
-		Pattern pattern = Pattern.compile(REGEX);
+		Pattern pattern = Pattern.compile(REGEX_INT_LINE);
 		String validLine = "";
 
 		for (String line : linesList) {

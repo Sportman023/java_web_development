@@ -22,11 +22,8 @@ public class CustomFileReader {
 	public List<String> readFile(String fileName) throws CustomException {
 
 		try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-
 			List<String> linesList = new ArrayList<String>();
-
 			linesList = stream.collect(Collectors.toList());
-
 			return linesList;
 
 		} catch (IOException e) {
@@ -34,5 +31,4 @@ public class CustomFileReader {
 			throw new CustomException("File doesn't exist");
 		}
 	}
-
 }

@@ -1,8 +1,6 @@
 package by.training.first_task_arrays.service.impl;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import by.training.first_task_arrays.entity.CustomArray;
 import by.training.first_task_arrays.service.CustomArrayService;
@@ -28,10 +26,7 @@ public class CustomArrayServiceStreamAPIImpl implements CustomArrayService, Cust
 	@Override
 	public void replaceItem(CustomArray customArray, int oldValue, int newValue) {
 		int[] array = customArray.getArray();
-		List<Integer> integerList = new ArrayList<Integer>();
-		Arrays.stream(array).map(o -> o == oldValue ? newValue : o).forEach(n -> integerList.add(n));
-
-		array = integerListToArray(integerList);
+		array = Arrays.stream(array).map(o -> o == oldValue ? newValue : o).toArray();
 		customArray.setArray(array);
 	}
 
@@ -51,7 +46,6 @@ public class CustomArrayServiceStreamAPIImpl implements CustomArrayService, Cust
 	public int countPositiveItem(CustomArray customArray) {
 		int[] array = customArray.getArray();
 		long countLong = Arrays.stream(array).filter(n -> n > 0).count();
-
 		return (int) countLong;
 	}
 
@@ -63,20 +57,8 @@ public class CustomArrayServiceStreamAPIImpl implements CustomArrayService, Cust
 	}
 
 	public void sortCustomArray(CustomArray customArray) {
-		List<Integer> integerList = new ArrayList<Integer>();
 		int[] array = customArray.getArray();
-		Arrays.stream(array).sorted().forEach(n -> integerList.add(n));
-
-		array = integerListToArray(integerList);
+		array = Arrays.stream(array).sorted().toArray();
 		customArray.setArray(array);
 	}
-
-	private int[] integerListToArray(List<Integer> integerList) {
-		int[] array = new int[integerList.size()];
-		for (int i = 0; i < integerList.size(); i++) {
-			array[i] = integerList.get(i);
-		}
-		return array;
-	}
-
 }

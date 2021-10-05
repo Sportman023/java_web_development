@@ -20,10 +20,20 @@ public class FileReaderTest {
   
   @Test
   public void readFileTest() throws CustomException {
-	  final String FILE_NAME = "src/main/sources/testTextFile.txt";
+	  final String FILE_NAME = "src/test/resources/testTextFile.txt";
 	  List<String> expected = new ArrayList<String>();
 	  expected.add("1 2 3");
 	  expected.add("4i5 6");
+	  
+	  List<String> actual = customFileReader.readFile(FILE_NAME);
+	  
+	  assertTrue(expected.equals(actual));
+  }
+  @Test
+  public void readFileTestEmpty() throws CustomException {
+	  final String FILE_NAME = "src/test/resources/testTextFileEmpty.txt";
+	  List<String> expected = new ArrayList<String>();
+
 	  
 	  List<String> actual = customFileReader.readFile(FILE_NAME);
 	  
